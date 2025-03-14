@@ -31,7 +31,7 @@ jobs:
           git pull origin main
 
           # 关闭占用 3000 端口的进程
-          lsof -ti:3000 | xargs kill -9 || true
+          pm2 restart "flag test"
 
           # 安装依赖
           npm install
