@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('Hello, World! 123');
+  res.send('Hello, World! 456');
 });
 
 // 注册路由
