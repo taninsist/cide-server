@@ -1,0 +1,28 @@
+name: Deploy to Server
+on:
+  push:
+    branches:
+      - main # 当推送到 test 分支时触发
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 第一步：检出代码（供 GitHub Actions 执行环境使用，非部署服务器）
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # 第二步：部署到服务器
+      - name: Deploy to Server
+        run: |
+          # 在这里编写部署到测试环境的命令
+          ROOT_DIR=/usr/local/cide-server
+
+          # 进入项目目录
+          cd $ROOT_DIR
+
+          # 拉取最新代码
+          git pull origin main
+          # 安装依赖
+          npm install
+          # 重启项目
+          npm run start
