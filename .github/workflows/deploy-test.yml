@@ -5,7 +5,8 @@ on:
       - main # 当推送到 test 分支时触发
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       # 第一步：检出代码（供 GitHub Actions 执行环境使用，非部署服务器）
       - name: Checkout code
