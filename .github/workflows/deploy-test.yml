@@ -19,6 +19,14 @@ jobs:
           # 进入项目目录
           cd /usr/local/cide-server
 
+          # 设置 Node.js 环境变量
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          
+          # 确认 Node.js 和 npm 可用
+          node -v
+          npm -v
+
           # 拉取最新代码
           git pull origin main
           # 安装依赖
