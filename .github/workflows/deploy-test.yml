@@ -15,10 +15,8 @@ jobs:
       - name: Deploy to Server
         run: |
           # 在这里编写部署到测试环境的命令
-          ROOT_DIR=/usr/local/cide-server
-
           # 进入项目目录
-          cd \$ROOT_DIR
+          cd /usr/local/cide-server
 
           # 拉取最新代码
           git pull origin main
