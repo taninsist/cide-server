@@ -8,6 +8,10 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
 // 注册路由
 app.post('/register', [
   body('account').trim().isLength({ min: 3 }).withMessage('账号至少需要3个字符'),
